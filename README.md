@@ -6,7 +6,7 @@
 - 1.0.0-tsi.d.t : Model for the Transport SDN Introduction at Telefonica Germany
 
 ### UML
-- [Alarms_1.0.0-tsp.220225.1950](./Alarms_1.0.0-tsp.220225.1950.zip)
+- [Alarms_1.0.0-tsp.220225.1950a](./Alarms_1.0.0-tsp.220225.1950a.zip)
 
 ### Overview 
 - [Alarms_1.0.0-tsp.220225.1950+overview.1](./Alarms_1.0.0-tsp.220225.1950+overview.1.png)
@@ -21,7 +21,7 @@
 - always
 
 ### YANG File
-- to be provided
+- [Alarms_1.0.0-tsp.220225.1950a+yang.1](./Alarms_1.0.0-tsp.220225.1950a+yang.1.zip)
 
 ### Interface Simulator
 - to be provided 
