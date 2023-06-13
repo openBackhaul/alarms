@@ -7,15 +7,18 @@
 
 ### UML
 - [Alarms_1.0.0-tsi.220302.1220](./Alarms_1.0.0-tsi.220302.1220.zip)
+- [Alarms_1.0.0-tsi.230613.1810](./Alarms_1.0.0-tsi.230613.1810.zip)
 
 ### Overview 
 - [Alarms_1.0.0-tsi.220302.1220+overview.1](./Alarms_1.0.0-tsi.220302.1220+overview.1.png)
+- [Alarms_1.0.0-tsi.230613.1810+overview.1](./Alarms_1.0.0-tsi.230613.1810+overview.1.png)
 
 ### List of Classes
 - to be provided
 
 ### GenDoc Export
 - [Alarms_1.0.0-tsi.220302.1220+gendoc.1](./Alarms_1.0.0-tsi.220302.1220+gendoc.1.docx)
+- [Alarms_1.0.0-tsi.230613.1810+gendoc.1](./Alarms_1.0.0-tsi.230613.1810+gendoc.1.docx)
 
 ### Augmentation Condition
 - always
