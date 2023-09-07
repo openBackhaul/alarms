@@ -6,36 +6,33 @@
 - 1.0.0-tsi.d.t : Model for the Transport SDN Introduction at Telefonica Germany
 
 ### UML
-- [Alarms_1.0.0-tsi.220302.1220](./Alarms_1.0.0-tsi.220302.1220.zip)
-- [Alarms_1.0.0-tsi.230613.1810](./Alarms_1.0.0-tsi.230613.1810.zip)
+- [Alarms_1.0.0-tsi.230907.1825](./Alarms_1.0.0-tsi.230907.1825.zip)  
 
 ### Overview 
-- [Alarms_1.0.0-tsi.220302.1220+overview.1](./Alarms_1.0.0-tsi.220302.1220+overview.1.png)
-- [Alarms_1.0.0-tsi.230613.1810+overview.1](./Alarms_1.0.0-tsi.230613.1810+overview.1.png)
-
-### List of Classes
-- to be provided
+- [Alarms_1.0.0-tsi.230907.1825+overview.1](./Alarms_1.0.0-tsi.230907.1825+overview.1.png)
 
 ### GenDoc Export
-- [Alarms_1.0.0-tsi.220302.1220+gendoc.1](./Alarms_1.0.0-tsi.220302.1220+gendoc.1.docx)
-- [Alarms_1.0.0-tsi.230613.1810+gendoc.1](./Alarms_1.0.0-tsi.230613.1810+gendoc.1.docx)
+- [Alarms_1.0.0-tsi.230907.1825+gendoc.1](./Alarms_1.0.0-tsi.230907.1825+gendoc.1.docx)
 
 ### Augmentation Condition
 - always
 
 ### YANG File
-- [Alarms_1.0.0-tsi.220302.1220+yang.1](./Alarms_1.0.0-tsi.220302.1220+yang.1.zip)
+- to be provided
 
-### Interface Simulator
-- to be provided 
+### JSON Schema  
+- to be provided  
 
-### Interface Validator
-- to be provided 
+### Interface Simulator  
+- to be provided  
+
+### Interface Validator  
+- to be provided  
 
 ### Publication
 - Candidate for ONF TR-532 v2.0
 
-### Aspired Model Classification
+### Aspired Model Classification  
 - Live Network
 
 ### Open Issue List
