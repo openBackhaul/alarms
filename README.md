@@ -6,19 +6,19 @@
 - 1.0.0-tsi.d.t : Model for the Transport SDN Introduction at Telefonica Germany
 
 ### UML
-- [Alarms_1.0.0-tsi.231005.1630](./Alarms_1.0.0-tsi.231005.1630.zip)  
+- [Alarms_1.0.0-tsi.240102.1710](./Alarms_1.0.0-tsi.240102.1710.zip)  
 
 ### Overview 
-- [Alarms_1.0.0-tsi.231005.1630+overview.1](./Alarms_1.0.0-tsi.231005.1630+overview.1.png)
+- [Alarms_1.0.0-tsi.240102.1710+overview.1](./Alarms_1.0.0-tsi.240102.1710+overview.1.png)
 
 ### GenDoc Export
-- [Alarms_1.0.0-tsi.231005.1630+gendoc.1](./Alarms_1.0.0-tsi.231005.1630+gendoc.1.docx)
+- [Alarms_1.0.0-tsi.240102.1710+gendoc.1](./Alarms_1.0.0-tsi.240102.1710+gendoc.1.docx)
 
 ### Augmentation Condition
 - always
 
 ### YANG File
-- [Alarms_1.0.0-tsi.231005.1630+yang.1](./Alarms_1.0.0-tsi.231005.1630+yang.1.zip)
+- [Alarms_1.0.0-tsi.240102.1710+yang.1](./Alarms_1.0.0-tsi.240102.1710+yang.1.zip)
 
 ### JSON Schema  
 - to be provided  
