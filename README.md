@@ -15,25 +15,25 @@
 - [Alarms_1.0.0-tsi.240122.1310+gendoc.1](./Alarms_1.0.0-tsi.240122.1310+gendoc.1.docx)
 
 ### Augmentation Condition
-- always
+- always augmented
 
 ### YANG File
-- [Alarms_1.0.0-tsi.240122.1310+yang.1](./Alarms_1.0.0-tsi.240122.1310+yang.1.zip)
+- [Alarms_1.0.0-tsi.240122.1310+yang.1](./Alarms_1.0.0-tsi.240122.1310+yang/alarms-1-0.yang)
 
-### JSON Schema  
-- to be provided  
+### Schema
+- [Alarms_1.0.0-tsi.240122.1310+schema](./Alarms_1.0.0-tsi.240122.1310+schema/)
 
-### Interface Simulator  
-- to be provided  
+### Interface Simulator
+- [Alarms_1.0.0-tsi.240122.1310+simulator](./Alarms_1.0.0-tsi.240122.1310+simu/)
 
-### Interface Validator  
-- to be provided  
+### Interface Validator
+- [Alarms_1.0.0-tsi.240122.1310+validator](./Alarms_1.0.0-tsi.240122.1310+vali/)
 
 ### Publication
-- Candidate for ONF TR-532 v2.0
+- Published as a part of ONF TR-532 v2.0  
 
-### Aspired Model Classification  
-- Live Network
+### Model Classification
+- Operational in Live Network
 
 ### Open Issue List
 - [alarms/issues](../../issues)

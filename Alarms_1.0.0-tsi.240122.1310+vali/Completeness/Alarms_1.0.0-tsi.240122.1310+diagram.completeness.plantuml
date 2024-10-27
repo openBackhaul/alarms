@@ -1,0 +1,61 @@
+@startuml Alarms_1.0.0-tsi.240122.1310+diagram.completeness
+skinparam responseMessageBelowArrow true
+
+title
+Alarms_1.0.0-tsi.240122.1310+testcase.completeness
+end title
+
+participant "Postman" as Postman
+participant "Data" as Data
+participant "Collection" as Collection
+
+participant "/alarm-capability" as Capability
+participant "/alarm-configuration" as Configuration
+participant "/current-alarms" as CurrentAlarms
+participant "/alarm-event-records" as AlarmEventRecords
+
+group Preparation
+  Data --\\o Postman : {servers,\n   mountName,\n   kindOfReference,\n   suffixUrlEncodingIsRequired}
+  activate Postman
+  Postman --\\o Collection : {servers,\n   mountName,\n   kindOfReference,\n   suffixUrlEncodingIsRequired}
+end
+
+group /alarm-capability
+  Collection --\\o Postman : {mountName}
+  Postman -> Capability : {mountName}
+  Postman <-- Capability : {CapabilityClass}
+  note right Postman
+    schema validation
+  end note
+end
+
+group /alarm-configuration
+  Collection --\\o Postman : {mountName}
+  Postman -> Configuration : {mountName}
+  Postman <-- Configuration : {ConfigurationClass}
+  note right Postman
+    schema validation
+  end note
+end
+
+group /current-alarms
+  Collection --\\o Postman : {mountName}
+  Postman -> CurrentAlarms : {mountName}
+  Postman <-- CurrentAlarms : {CurrentAlarmsClass}
+  note right Postman
+    schema validation
+  end note
+end
+
+group /alarm-current-performance
+  Collection --\\o Postman : {mountName}
+  Postman -> AlarmEventRecords : {mountName}
+  Postman <-- AlarmEventRecords : {AlarmEventRecordsClass}
+  note right Postman
+    schema validation
+  end note
+end
+
+deactivate Postman
+
+@enduml

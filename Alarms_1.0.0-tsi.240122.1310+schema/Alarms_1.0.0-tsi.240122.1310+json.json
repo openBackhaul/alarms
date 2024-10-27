@@ -1,0 +1,306 @@
+{
+    "/alarms-1-0:alarm-capability": {
+        "type": "object",
+        "required": [
+            "alarms-1-0:alarm-capability"
+        ],
+        "properties": {
+            "alarms-1-0:alarm-capability": {
+                "type": "object",
+                "properties": {
+                    "alarm-inventory-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "x-key": "alarm-type-id alarm-type-qualifier",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "alarm-type-id",
+                                "alarm-type-qualifier",
+                                "will-clear",
+                                "description",
+                                "alarm-category",
+                                "probable-cause",
+                                "probable-cause-string",
+                                "specific-problem"
+                            ],
+                            "properties": {
+                                "alarm-type-id": {
+                                    "type": "string"
+                                },
+                                "alarm-type-qualifier": {
+                                    "type": "string"
+                                },
+                                "will-clear": {
+                                    "type": "boolean"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "alarm-category": {
+                                    "type": "string",
+                                    "enum": [
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_OTHER",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_COMMUNICATIONS_ALARM",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_QUALITY_OF_SERVICE_ALARM",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_PROCESSING_ERROR_ALARM",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_EQUIPMENT_ALARM",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_ENVIRONMENTAL_ALARM",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_INTEGRITY_VIOLATION",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_OPERATIONAL_VIOLATION",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_PHYSICAL_VIOLATION",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_SECURITY_SERVICE_OR_MECHANISM_VIOLATION",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_TIME_DOMAIN_VIOLATION",
+                                        "alarms-1-0:ALARM_CATEGORY_TYPE_NOT_YET_DEFINED"
+                                    ]
+                                },
+                                "probable-cause": {
+                                    "type": "integer",
+                                    "format": "int16"
+                                },
+                                "probable-cause-string": {
+                                    "type": "string"
+                                },
+                                "specific-problem": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/alarms-1-0:alarm-configuration": {
+        "type": "object",
+        "required": [
+            "alarms-1-0:alarm-configuration"
+        ],
+        "properties": {
+            "alarms-1-0:alarm-configuration": {
+                "type": "object",
+                "properties": {
+                    "severity-configuration-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "x-key": "severity-configuration-identifier",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "severity-configuration-identifier",
+                                "alarm-type-id",
+                                "resource-list",
+                                "resource-group-description"
+                            ],
+                            "properties": {
+                                "severity-configuration-identifier": {
+                                    "type": "string"
+                                },
+                                "alarm-type-id": {
+                                    "type": "string"
+                                },
+                                "alarm-type-qualifier": {
+                                    "type": "string"
+                                },
+                                "resource-list": {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "resource-group-description": {
+                                    "type": "string"
+                                },
+                                "severity-level-list": {
+                                    "type": "array",
+                                    "minItems": 0,
+                                    "items": {
+                                        "type": "string",
+                                        "enum": [
+                                            "alarms-1-0:SEVERITY_TYPE_INDETERMINATE",
+                                            "alarms-1-0:SEVERITY_TYPE_WARNING",
+                                            "alarms-1-0:SEVERITY_TYPE_MINOR",
+                                            "alarms-1-0:SEVERITY_TYPE_MAJOR",
+                                            "alarms-1-0:SEVERITY_TYPE_CRITICAL",
+                                            "alarms-1-0:SEVERITY_TYPE_NOT_YET_DEFINED"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "behavior-management-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "x-key": "alarm-type-id alarm-type-qualifier resource",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "alarm-type-id",
+                                "resource",
+                                "behavior"
+                            ],
+                            "properties": {
+                                "alarm-type-id": {
+                                    "type": "string"
+                                },
+                                "alarm-type-qualifier": {
+                                    "type": "string"
+                                },
+                                "resource": {
+                                    "type": "string"
+                                },
+                                "behavior": {
+                                    "type": "string",
+                                    "enum": [
+                                        "alarms-1-0:BEHAVIOR_TYPE_FULLY_FUNCTIONAL",
+                                        "alarms-1-0:BEHAVIOR_TYPE_NOT_NOTIFIED",
+                                        "alarms-1-0:BEHAVIOR_TYPE_DISABLED",
+                                        "alarms-1-0:BEHAVIOR_TYPE_NOT_YET_DEFINED"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "/alarms-1-0:current-alarms": {
+        "type": "object",
+        "required": [
+            "alarms-1-0:current-alarms"
+        ],
+        "properties": {
+            "alarms-1-0:current-alarms": {
+                "type": "object",
+                "required": [
+                    "number-of-current-alarms",
+                    "time-of-latest-change"
+                ],
+                "properties": {
+                    "current-alarm-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "x-key": "alarm-type-id alarm-type-qualifier resource",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "alarm-type-id",
+                                "resource",
+                                "alarm-severity",
+                                "timestamp"
+                            ],
+                            "properties": {
+                                "alarm-type-id": {
+                                    "type": "string"
+                                },
+                                "alarm-type-qualifier": {
+                                    "type": "string"
+                                },
+                                "resource": {
+                                    "type": "string"
+                                },
+                                "alarm-severity": {
+                                    "type": "string",
+                                    "enum": [
+                                        "alarms-1-0:SEVERITY_TYPE_INDETERMINATE",
+                                        "alarms-1-0:SEVERITY_TYPE_WARNING",
+                                        "alarms-1-0:SEVERITY_TYPE_MINOR",
+                                        "alarms-1-0:SEVERITY_TYPE_MAJOR",
+                                        "alarms-1-0:SEVERITY_TYPE_CRITICAL",
+                                        "alarms-1-0:SEVERITY_TYPE_NOT_YET_DEFINED"
+                                    ]
+                                },
+                                "timestamp": {
+                                    "type": "string",
+                                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})$"
+                                }
+                            }
+                        }
+                    },
+                    "number-of-current-alarms": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "time-of-latest-change": {
+                        "type": "string",
+                        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})$"
+                    }
+                }
+            }
+        }
+    },
+    "/alarms-1-0:alarm-event-records": {
+        "type": "object",
+        "required": [
+            "alarms-1-0:alarm-event-records"
+        ],
+        "properties": {
+            "alarms-1-0:alarm-event-records": {
+                "type": "object",
+                "required": [
+                    "number-of-alarm-event-records",
+                    "time-of-latest-change"
+                ],
+                "properties": {
+                    "alarm-event-record-list": {
+                        "type": "array",
+                        "minItems": 0,
+                        "x-key": "alarm-event-sequence-number",
+                        "items": {
+                            "type": "object",
+                            "required": [
+                                "alarm-event-sequence-number",
+                                "alarm-type-id",
+                                "resource",
+                                "alarm-severity",
+                                "timestamp"
+                            ],
+                            "properties": {
+                                "alarm-event-sequence-number": {
+                                    "type": "integer",
+                                    "format": "uint32"
+                                },
+                                "alarm-type-id": {
+                                    "type": "string"
+                                },
+                                "alarm-type-qualifier": {
+                                    "type": "string"
+                                },
+                                "resource": {
+                                    "type": "string"
+                                },
+                                "alarm-severity": {
+                                    "type": "string",
+                                    "enum": [
+                                        "alarms-1-0:SEVERITY_AND_CLEARED_TYPE_INDETERMINATE",
+                                        "alarms-1-0:SEVERITY_AND_CLEARED_TYPE_WARNING",
+                                        "alarms-1-0:SEVERITY_AND_CLEARED_TYPE_MINOR",
+                                        "alarms-1-0:SEVERITY_AND_CLEARED_TYPE_MAJOR",
+                                        "alarms-1-0:SEVERITY_AND_CLEARED_TYPE_CRITICAL",
+                                        "alarms-1-0:SEVERITY_AND_CLEARED_TYPE_CLEARED",
+                                        "alarms-1-0:SEVERITY_AND_CLEARED_TYPE_NOT_YET_DEFINED"
+                                    ]
+                                },
+                                "timestamp": {
+                                    "type": "string",
+                                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})$"
+                                }
+                            }
+                        }
+                    },
+                    "number-of-alarm-event-records": {
+                        "type": "integer",
+                        "format": "int16"
+                    },
+                    "time-of-latest-change": {
+                        "type": "string",
+                        "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[\\+\\-]\\d{2}:\\d{2})$"
+                    }
+                }
+            }
+        }
+    }
+}

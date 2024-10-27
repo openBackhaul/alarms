@@ -1,0 +1,604 @@
+openapi: 3.0.1
+info:
+  title: Alarms_1.0.0-tsi.240122.1310+simulator
+  version: 1.0.0
+
+paths:
+########################################################################################################################
+#   Generic Paths
+########################################################################################################################
+  /core-model-1-4:network-control-domain=cache/control-construct={mountName}/alarms-1-0:alarm-pac/alarm-capability:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getAlarmCapability
+      summary: 'Provides AlarmCapability from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'AlarmCapability provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - alarms-1-0:alarm-capability
+                properties:
+                  alarms-1-0:alarm-capability:
+                    $ref: '#/components/schemas/alarm-capability'
+                example:
+                  alarms-1-0:alarm-capability:
+                    alarm-inventory-list:
+                      - alarm-type-id: 'string'
+                        alarm-type-qualifier: 'string'
+                        will-clear: true
+                        description: 'string'
+                        alarm-category: 'alarms-1-0:ALARM_CATEGORY_TYPE_OTHER'
+                        probable-cause: 0
+                        probable-cause-string: 'string'
+                        specific-problem: 'string'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /core-model-1-4:network-control-domain=cache/control-construct={mountName}/alarms-1-0:alarm-pac/alarm-configuration:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getAlarmConfiguration
+      summary: 'Provides AlarmConfiguration from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'AlarmConfiguration provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - alarms-1-0:alarm-configuration
+                properties:
+                  alarms-1-0:alarm-configuration:
+                    $ref: '#/components/schemas/alarm-configuration'
+                example:
+                  alarms-1-0:alarm-configuration:
+                    severity-configuration-list:
+                      - severity-configuration-identifier: 'string'
+                        alarm-type-id: 'string'
+                        alarm-type-qualifier: 'string'
+                        resource-list:
+                          - 'string'
+                        resource-group-description: 'string'
+                        severity-level-list:
+                          - 'alarms-1-0:SEVERITY_TYPE_INDETERMINATE'
+                    behavior-management-list:
+                      - alarm-type-id: 'string'
+                        alarm-type-qualifier: 'string'
+                        resource: 'string'
+                        behavior: 'alarms-1-0:BEHAVIOR_TYPE_FULLY_FUNCTIONAL'  
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /core-model-1-4:network-control-domain=cache/control-construct={mountName}/alarms-1-0:alarm-pac/current-alarms:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getCurrentAlarms
+      summary: 'Provides CurrentAlarms from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'CurrentAlarms provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - alarms-1-0:current-alarms
+                properties:
+                  alarms-1-0:current-alarms:
+                    $ref: '#/components/schemas/current-alarms'
+                example:
+                  alarms-1-0:current-alarms:
+                    current-alarm-list:
+                      - alarm-type-id: 'string'
+                        alarm-type-qualifier: 'string'
+                        resource: 'string'
+                        alarm-severity: 'alarms-1-0:SEVERITY_TYPE_INDETERMINATE'
+                        timestamp: '2010-11-20T14:00:00+01:00'
+                    number-of-current-alarms: 0
+                    time-of-latest-change: '2010-11-20T14:00:00+01:00'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+  /core-model-1-4:network-control-domain=cache/control-construct={mountName}/alarms-1-0:alarm-pac/alarm-event-records:
+    parameters:
+      - $ref: '#/components/parameters/user'
+      - $ref: '#/components/parameters/originator'
+      - $ref: '#/components/parameters/x-correlator'
+      - $ref: '#/components/parameters/trace-indicator'
+      - $ref: '#/components/parameters/customer-journey'
+      - $ref: '#/components/parameters/mountName'
+      - $ref: '#/components/parameters/fields'
+    get:
+      operationId: getAlarmEventRecords
+      summary: 'Provides AlarmEventRecords from cache'
+      tags:
+        - IndividualServices
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: 'AlarmEventRecords provided from cache'
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - alarms-1-0:alarm-event-records
+                properties:
+                  alarms-1-0:alarm-event-records:
+                    $ref: '#/components/schemas/alarm-event-records'
+                example:
+                  alarms-1-0:alarm-event-records:
+                    alarm-event-record-list:
+                      - alarm-event-sequence-number: 0
+                        alarm-type-id: 'string'
+                        alarm-type-qualifier: 'string'
+                        resource: 'string'
+                        alarm-severity: 'alarms-1-0:SEVERITY_AND_CLEARED_TYPE_INDETERMINATE'
+                        timestamp: '2010-11-20T14:00:00+01:00'
+                    number-of-alarm-event-records: 0
+                    time-of-latest-change: '2010-11-20T14:00:00+01:00'
+          headers:
+            x-correlator:
+              $ref: '#/components/headers/x-correlator'
+            exec-time:
+              $ref: '#/components/headers/exec-time'
+            backend-time:
+              $ref: '#/components/headers/backend-time'
+            life-cycle-state:
+              $ref: '#/components/headers/life-cycle-state'
+        '4XX':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        '500':
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+        default:
+          $ref: '#/components/responses/responseForErroredServiceRequests'
+
+
+########################################################################################################################
+#   Common Components
+########################################################################################################################
+components:
+  parameters:
+    user:
+      name: user
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'User Name'
+      description: 'User identifier from the system starting the service call'
+    originator:
+      name: originator
+      in: header
+      required: true
+      schema:
+        type: string
+        minLength: 3
+        example: 'Resolver'
+      description: >
+        'Identification for the system consuming the API, as defined in
+         [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]'
+    x-correlator:
+      name: x-correlator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+        description: 'Empty string accepted from external applications.'
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses'
+    trace-indicator:
+      name: trace-indicator
+      in: header
+      required: true
+      schema:
+        type: string
+        pattern: '^([0-9]+)(\.([0-9]+))*$'
+        description: 'Empty string accepted from external applications.'
+        example: '1.3.1'
+      description: 'Sequence of request numbers along the flow'
+    customer-journey:
+      name: customer-journey
+      in: header
+      required: true
+      schema:
+        type: string
+        example: 'Unknown value'
+      description: 'Holds information supporting customer’s journey to which the execution applies'
+    mountName:
+      name: mountName
+      in: path
+      required: true
+      schema:
+        type: string
+        example: '222250001'
+      description: 'The mountName of the device that is addressed by the request'
+    uuid:
+      name: uuid
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within the device'
+    uuid1:
+      name: uuid1
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LTP-MWPS-TTP-1-1'
+      description: 'Another instance identifier that is unique within the device'
+    localId:
+      name: localId
+      in: path
+      required: true
+      schema:
+        type: string
+        example: 'LP-MWPS-TTP-1-1'
+      description: 'Instance identifier that is unique within its list'
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+        example: 'node(node-id;netconf-node-topology:connection-status)'
+      description: 'Query parameter to filter ressources according to RFC8040 fields filter spec'
+  responses:
+    responseForErroredServiceRequests:
+      description: 'Response in case of errored service requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+      headers:
+        x-correlator:
+          schema:
+            type: string
+            pattern: '^[0-9A-Fa-f]{8}(?:-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$'
+            example: '550e8400-e29b-11d4-a716-446655440000'
+          description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+        exec-time:
+          schema:
+            type: integer
+            example: 1100
+          description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+        backend-time:
+          schema:
+            type: integer
+            example: 850
+          description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    responseForErroredOamRequests:
+      description: 'Response in case of errored OaM requests'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/errorDescription'
+  headers:
+    x-correlator:
+      schema:
+        type: string
+        example: '550e8400-e29b-11d4-a716-446655440000'
+      description: 'UUID for the service execution flow that allows to correlate requests and responses. Its value must be identical at the response compared with its corresponding request'
+    exec-time:
+      schema:
+        type: integer
+        example: 1100
+      description: 'Value written by the service provider, reporting the total elapsed time for the execution, including all the additional processing needed to retrieve the data from the backend service. Expressed in milliseconds'
+    backend-time:
+      schema:
+        type: integer
+        example: 850
+      description: 'Value written by the service provider, reporting the elapsed time for data retrieval from the backend (service invocation, database access…). Expressed in milliseconds'
+    life-cycle-state:
+      schema:
+        type: string
+        enum:
+          - 'EXPERIMENTAL'
+          - 'OPERATIONAL'
+          - 'DEPRECATED'
+          - 'OBSOLETE'
+          - 'UNKNOWN'
+          - 'NOT_YET_DEFINED'
+        example: 'EXPERIMENTAL'
+  schemas:
+    errorDescription:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+
+    alarm-capability:
+      type: object
+      properties:
+        alarm-inventory-list:
+          type: array
+          minItems: 0
+          x-key: alarm-type-id alarm-type-qualifier
+          items:
+            type: object
+            required:
+              - alarm-type-id
+              - alarm-type-qualifier
+              - will-clear
+              - description
+              - alarm-category
+              - probable-cause
+              - probable-cause-string
+              - specific-problem
+            properties:
+              alarm-type-id:
+                type: string
+              alarm-type-qualifier:
+                type: string
+              will-clear:
+                type: boolean
+              description:
+                type: string
+              alarm-category:
+                type: string
+                enum:
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_OTHER"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_COMMUNICATIONS_ALARM"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_QUALITY_OF_SERVICE_ALARM"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_PROCESSING_ERROR_ALARM"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_EQUIPMENT_ALARM"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_ENVIRONMENTAL_ALARM"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_INTEGRITY_VIOLATION"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_OPERATIONAL_VIOLATION"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_PHYSICAL_VIOLATION"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_SECURITY_SERVICE_OR_MECHANISM_VIOLATION"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_TIME_DOMAIN_VIOLATION"
+                  - "alarms-1-0:ALARM_CATEGORY_TYPE_NOT_YET_DEFINED"
+              probable-cause:
+                type: integer
+                format: int16
+              probable-cause-string:
+                type: string
+              specific-problem:
+                type: string
+    alarm-configuration:
+      type: object
+      properties:
+        severity-configuration-list:
+          type: array
+          minItems: 0
+          x-key: severity-configuration-identifier
+          items:
+            type: object
+            required:
+              - severity-configuration-identifier
+              - alarm-type-id
+              - resource-list
+              - resource-group-description
+            properties:
+              severity-configuration-identifier:
+                type: string
+              alarm-type-id:
+                type: string
+              alarm-type-qualifier:
+                type: string
+              resource-list:
+                type: array
+                minItems: 1
+                items:
+                  type: string
+              resource-group-description:
+                type: string
+              severity-level-list:
+                type: array
+                minItems: 0
+                items:
+                  type: string
+                  enum:
+                    - 'alarms-1-0:SEVERITY_TYPE_INDETERMINATE'
+                    - 'alarms-1-0:SEVERITY_TYPE_WARNING'
+                    - 'alarms-1-0:SEVERITY_TYPE_MINOR'
+                    - 'alarms-1-0:SEVERITY_TYPE_MAJOR'
+                    - 'alarms-1-0:SEVERITY_TYPE_CRITICAL'
+                    - 'alarms-1-0:SEVERITY_TYPE_NOT_YET_DEFINED'
+        behavior-management-list:
+          type: array
+          minItems: 0
+          x-key: alarm-type-id alarm-type-qualifier resource
+          items:
+            type: object
+            required:
+              - alarm-type-id
+              - resource
+              - behavior
+            properties:
+              alarm-type-id:
+                type: string
+              alarm-type-qualifier:
+                type: string
+              resource:
+                type: string
+              behavior:
+                type: string
+                enum:
+                  - 'alarms-1-0:BEHAVIOR_TYPE_FULLY_FUNCTIONAL'
+                  - 'alarms-1-0:BEHAVIOR_TYPE_NOT_NOTIFIED'
+                  - 'alarms-1-0:BEHAVIOR_TYPE_DISABLED'
+                  - 'alarms-1-0:BEHAVIOR_TYPE_NOT_YET_DEFINED'
+    current-alarms:
+      type: object
+      required:
+        - number-of-current-alarms
+        - time-of-latest-change
+      properties:
+        current-alarm-list:
+          type: array
+          minItems: 0
+          x-key: alarm-type-id alarm-type-qualifier resource
+          items:
+            type: object
+            required:
+              - alarm-type-id
+              - resource
+              - alarm-severity
+              - timestamp
+            properties:
+              alarm-type-id:
+                type: string
+              alarm-type-qualifier:
+                type: string
+              resource:
+                type: string
+              alarm-severity:
+                type: string
+                enum:
+                  - 'alarms-1-0:SEVERITY_TYPE_INDETERMINATE'
+                  - 'alarms-1-0:SEVERITY_TYPE_WARNING'
+                  - 'alarms-1-0:SEVERITY_TYPE_MINOR'
+                  - 'alarms-1-0:SEVERITY_TYPE_MAJOR'
+                  - 'alarms-1-0:SEVERITY_TYPE_CRITICAL'
+                  - 'alarms-1-0:SEVERITY_TYPE_NOT_YET_DEFINED'
+              timestamp:
+                type: string
+                pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+        number-of-current-alarms:
+          type: integer
+          format: int16
+        time-of-latest-change:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+    alarm-event-records:
+      type: object
+      required:
+        - number-of-alarm-event-records
+        - time-of-latest-change
+      properties:
+        alarm-event-record-list:
+          type: array
+          minItems: 0
+          x-key: alarm-event-sequence-number
+          items:
+            type: object
+            required:
+              - alarm-event-sequence-number
+              - alarm-type-id
+              - resource
+              - alarm-severity
+              - timestamp
+            properties:
+              alarm-event-sequence-number:
+                type: integer
+                format: uint32
+              alarm-type-id:
+                type: string
+              alarm-type-qualifier:
+                type: string
+              resource:
+                type: string
+              alarm-severity:
+                type: string
+                enum:
+                  - 'alarms-1-0:SEVERITY_AND_CLEARED_TYPE_INDETERMINATE'
+                  - 'alarms-1-0:SEVERITY_AND_CLEARED_TYPE_WARNING'
+                  - 'alarms-1-0:SEVERITY_AND_CLEARED_TYPE_MINOR'
+                  - 'alarms-1-0:SEVERITY_AND_CLEARED_TYPE_MAJOR'
+                  - 'alarms-1-0:SEVERITY_AND_CLEARED_TYPE_CRITICAL'
+                  - 'alarms-1-0:SEVERITY_AND_CLEARED_TYPE_CLEARED'
+                  - 'alarms-1-0:SEVERITY_AND_CLEARED_TYPE_NOT_YET_DEFINED'
+              timestamp:
+                type: string
+                pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+        number-of-alarm-event-records:
+          type: integer
+          format: int16
+        time-of-latest-change:
+          type: string
+          pattern: '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?(Z|[\+\-]\d{2}:\d{2})$'
+
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: operation-key
+    basicAuth:
+      type: http
+      scheme: basic
